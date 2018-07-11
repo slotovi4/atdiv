@@ -1,0 +1,116 @@
+.clearfix,
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.gallery-img-fields-wrap {
+	display: block;
+	width: 100%;
+	padding: 12px 0;
+}
+
+.gallery-img-prev {
+	width: 12.5%;
+	height: 150px;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	border: 12px solid #fff;
+	position: relative;
+	transition: all 0.2s ease-in-out 0s;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.gallery-img-prev:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	background: rgba(0, 0, 0,.5);
+	transition: all 0.2s ease-in-out 0s;
+	opacity: 0;
+	z-index: 4;
+}
+
+.gallery-img-prev:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	margin-top: -12px;
+	margin-left: -12px;
+	display: block;
+	background: url('../img/edit.png') no-repeat center center;
+	transition: all 0.2s ease-in-out 0s;
+	transform: translateY(15px);
+	opacity: 0;
+	z-index: 5;
+}
+
+.gallery-img-prev:hover {
+	box-shadow: 0 25px 79px -51px #000;
+	z-index: 3;
+}
+
+.gallery-img-prev:hover.gallery-img-prev:after {
+	opacity: 1;
+}
+
+.gallery-img-prev:hover.gallery-img-prev:before {
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.gallery-img-prev:hover .remove-gallery-img-button {
+	display: block;
+	opacity: 1;
+	transform: translate(0, 0);
+}
+
+.remove-gallery-img-button {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	/*border-radius: 50%;*/
+	display: block;
+	top: 12px;
+	right: 12px;
+	cursor: pointer;
+	background: url('../img/close-button(w).png') no-repeat center center;
+	transition: all 0.4s ease-in-out 0s;
+	/*box-shadow: 0 0px 15px -7px #333;*/
+	z-index: 10;
+	opacity: 0;
+	transform: translate(100%, 0);
+	/*transform: rotate(0);*/
+}
+
+.remove-gallery-img-button:hover {
+	background: url('../img/close-button(h).png') no-repeat center center;
+	transform: rotate(180deg);
+}
+
+.edit-gallery-img-link {
+	cursor: pointer;
+}
